@@ -2,14 +2,14 @@ type User {
     id: ID!
     role: String!
     status: String!
-    firstName: String!
-    lastName: String!
+    firstName: String
+    lastName: String
     password: String!
     phone: String
     age: Int
     gender: String
     avatarUrl: String
-    lastLoginDate: String!
+    lastLoginDate: String
 }
 
 input UserAuthenticationInput {

@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../../configs/sequelize';
 
-const User = sequelize.define('User', {
+export const User = sequelize.define('User', {
     id: {
         type: DataTypes.STRING,
         primaryKey: true,
@@ -37,5 +37,3 @@ const User = sequelize.define('User', {
         type: DataTypes.DATE,
     },
 });
-
-export default User;

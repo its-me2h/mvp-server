@@ -1,3 +1,4 @@
+import { v4 as uuid } from 'uuid';
 import { User } from '../../../models/users/User';
 
 export const userResolvers = {
@@ -8,7 +9,7 @@ export const userResolvers = {
     },
     Mutation: {
         createUser: async (_: any, { object }: { object: any }) => {
-            return await User.create(object);
+            return await User.create({ id: uuid(), ...object });
         },
         updateUser: async (_: any, { id, object }: { id: string, object: any }) => {
             const user = await User.findByPk(id);

@@ -12,12 +12,12 @@ type User {
     lastLoginDate: String
 }
 
-input UserAuthenticationInput {
+input AuthenticationInput {
     phone: String!
     password: String!
 }
 
-input UserCreationInput {
+input CreateUserInput {
     id: ID
     role: String!
     status: String!
@@ -30,7 +30,7 @@ input UserCreationInput {
     avatarUrl: String
 }
 
-input UserUpdateInput {
+input UpdateUserInput {
     role: String
     status: String
     firstName: String

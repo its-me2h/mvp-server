@@ -1,5 +1,8 @@
 import { v4 as uuid } from 'uuid';
 import { User } from '../../../models/users/User';
+import { Admin } from '../../../models/users/Admin';
+import { Manager } from '../../../models/users/Manager';
+import { Client } from '../../../models/users/Client';
 
 export const userResolvers = {
     Query: {
@@ -9,7 +12,17 @@ export const userResolvers = {
     },
     Mutation: {
         createUser: async (_: any, { object }: { object: any }) => {
-            return await User.create({ id: uuid(), ...object });
+            const user: any = await User.create({ id: uuid(), ...object });
+            const roleMap: { [key: string]: any } = { admin: Admin, manager: Manager, client: Client };
+            const RoleModel = roleMap[object.role];
+            if (RoleModel) {
+                await RoleModel.create({
+                    id: uuid(),
+                    userID: user.id,
+                    status: user.status
+                });
+            }
+            return user;
         },
         updateUser: async (_: any, { id, object }: { id: string, object: any }) => {
             const user = await User.findByPk(id);

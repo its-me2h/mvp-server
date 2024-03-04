@@ -1,0 +1,14 @@
+type Admin {
+    id: ID!
+    userID: String!
+    status: String!
+}
+
+input CreateAdminInput {
+    userID: String!
+    status: String!
+}
+
+input UpdateAdminInput {
+    status: String
+}

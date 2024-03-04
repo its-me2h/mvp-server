@@ -30,7 +30,6 @@ input CreateUserInput {
 }
 
 input UpdateUserInput {
-    role: String
     status: String
     firstName: String
     lastName: String

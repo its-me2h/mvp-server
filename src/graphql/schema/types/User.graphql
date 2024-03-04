@@ -18,6 +18,7 @@ input AuthenticationInput {
 }
 
 input CreateUserInput {
+    id: ID
     role: String!
     status: String!
     firstName: String

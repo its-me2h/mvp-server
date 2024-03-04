@@ -1,6 +1,4 @@
-const { v4: uuid } = require('uuid');
 import { User } from '../../../models/users/User';
-
 
 export const userResolvers = {
     Query: {
@@ -10,7 +8,7 @@ export const userResolvers = {
     },
     Mutation: {
         createUser: async (_: any, { object }: { object: any }) => {
-            return await User.create({ id: uuid(), ...object });
+            return await User.create(object);
         },
         updateUser: async (_: any, { id, object }: { id: string, object: any }) => {
             const user = await User.findByPk(id);

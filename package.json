@@ -12,6 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "@apollo/subgraph": "^2.7.1",
+    "@graphql-tools/graphql-file-loader": "^8.0.1",
+    "@graphql-tools/load": "^8.0.2",
+    "@graphql-tools/merge": "^9.0.3",
     "@types/node": "^20.11.24",
     "apollo-server-core": "^3.13.0",
     "apollo-server-express": "^3.13.0",

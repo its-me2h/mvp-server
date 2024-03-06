@@ -23,6 +23,7 @@ export const User = sequelize.define('User', {
     },
     phone: {
         type: DataTypes.STRING,
+        unique: true,
     },
     age: {
         type: DataTypes.INTEGER,

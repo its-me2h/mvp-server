@@ -1,4 +1,3 @@
 type Mutation {
-    createAdmin(object: CreateAdminInput!): Admin!
-    updateAdmin(userID: ID!, object: UpdateAdminInput!): Admin!
+    updateAdmin(id: ID!, object: UpdateAdminInput!): Admin!
 }

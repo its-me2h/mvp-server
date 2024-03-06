@@ -2,21 +2,25 @@ import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import { buildSubgraphSchema } from '@apollo/subgraph';
 import apolloConfig from './src/configs/apollo';
-import typeDefs from './src/graphql/schema'
-import resolvers from './src/graphql/resolvers';
+import { typeDefs, resolvers } from './src/graphql';
 
 const app: any = express();
 app.use(express.json());
 
+// Create an ApolloServer instance
 const apollo = new ApolloServer({
     ...apolloConfig,
+    // Build the GraphQL schema
     schema: buildSubgraphSchema([{ typeDefs, resolvers }])
 });
 
-apollo.start()
-    .then(() => {
-        apollo.applyMiddleware({ app, path: '/graphql' });
-        app.listen({ port: 9009 }, () => console.log(`Listening on port ${9009}...`));
-    }).catch((error) => {
-        console.log('A failure occurred while starting the service.', error);
+apollo.start().then(() => {
+    // Apply Apollo middleware to the Express app
+    apollo.applyMiddleware({ app, path: '/graphql' });
+    // Start the Express app listening on port 9009
+    app.listen(9009, () => {
+        console.log('Server listening on port 9009...');
     });
+}).catch(error => {
+    console.error('Failed to start the server:', error);
+});

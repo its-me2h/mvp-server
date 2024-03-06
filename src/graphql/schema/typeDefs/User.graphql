@@ -10,11 +10,9 @@ type User {
     gender: String
     avatarUrl: String
     lastLoginDate: String
-}
-
-input AuthenticationInput {
-    phone: String!
-    password: String!
+    createdAt: String
+    updatedAt: String
+    admin: Admin
 }
 
 input CreateUserInput {
@@ -27,6 +25,8 @@ input CreateUserInput {
     age: Int
     gender: String
     avatarUrl: String
+    createdAt: String
+    updatedAt: String
 }
 
 input UpdateUserInput {
@@ -38,4 +38,10 @@ input UpdateUserInput {
     age: Int
     gender: String
     avatarUrl: String
+    updatedAt: String
+}
+
+input AuthenticationInput {
+    phone: String!
+    password: String!
 }

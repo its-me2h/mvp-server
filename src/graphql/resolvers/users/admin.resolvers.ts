@@ -20,3 +20,10 @@ export const Mutation = {
         return admin;
     },
 };
+
+export const User = {
+    // Nested query for retrieving Admin information from User
+    admin: async (user: any) => {
+        return await Admin.findAll({ where: { userId: user.id } });
+    },
+}

@@ -12,7 +12,7 @@ type User {
     lastLoginDate: String
     createdAt: String
     updatedAt: String
-    admin: Admin
+    admin: [Admin]
 }
 
 input CreateUserInput {

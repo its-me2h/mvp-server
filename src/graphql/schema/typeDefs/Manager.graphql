@@ -1,0 +1,22 @@
+type Manager {
+    id: ID!
+    userID: String!
+    adminID: String
+    status: String!
+    createdAt: String
+    updatedAt: String
+}
+
+input CreateManagerInput {
+    userID: String!
+    adminID: String
+    status: String!
+    createdAt: String
+    updatedAt: String
+}
+
+input UpdateManagerInput {
+    adminID: String
+    status: String
+    updatedAt: String
+}

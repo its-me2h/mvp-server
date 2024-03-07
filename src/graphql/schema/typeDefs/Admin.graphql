@@ -6,6 +6,13 @@ type Admin {
     updatedAt: String
 }
 
+input CreateAdminInput {
+    userID: String!
+    status: String!
+    createdAt: String
+    updatedAt: String
+}
+
 input UpdateAdminInput {
     status: String
     updatedAt: String

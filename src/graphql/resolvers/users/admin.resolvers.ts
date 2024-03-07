@@ -1,3 +1,4 @@
+import { v4 as uuid } from 'uuid';
 import { Admin } from '../../../models';
 
 export const Query = {
@@ -8,6 +9,10 @@ export const Query = {
 };
 
 export const Mutation = {
+    // Resolver function to create a new Admin
+    createAdmin: async (_: any, { object }: { object: any }) => {
+        return await Admin.create({ id: uuid(), ...object });
+    },
     // Resolver function to update an admin by ID
     updateAdmin: async (_: any, { id, object }: { id: string, object: any }) => {
         const admin = await Admin.findByPk(id);

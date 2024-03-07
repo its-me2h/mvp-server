@@ -9,6 +9,9 @@ export const Client = sequelize.define('Client', {
     userID: {
         type: DataTypes.STRING,
     },
+    apartmentID: {
+        type: DataTypes.STRING,
+    },
     status: {
         type: DataTypes.STRING,
     },

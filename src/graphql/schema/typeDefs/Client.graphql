@@ -1,0 +1,22 @@
+type Client {
+    id: ID!
+    userID: String!
+    apartmentID: String
+    status: String!
+    createdAt: String
+    updatedAt: String
+}
+
+input CreateClientInput {
+    userID: String!
+    apartmentID: String
+    status: String!
+    createdAt: String
+    updatedAt: String
+}
+
+input UpdateClientInput {
+    apartmentID: String
+    status: String
+    updatedAt: String
+}

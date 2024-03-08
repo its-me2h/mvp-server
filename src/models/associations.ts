@@ -1,8 +1,8 @@
 
-import { User } from "./users/User";
-import { Admin } from "./users/Admin";
-import { Client } from "./users/Client";
-import { Manager } from "./users/Manager";
+import { User } from "./users/User.model";
+import { Admin } from "./users/Admin.model";
+import { Client } from "./users/Client.model";
+import { Manager } from "./users/Manager.model";
 
 User.hasMany(Admin);
 Admin.belongsTo(User);

@@ -1,0 +1,29 @@
+type Block {
+    id: String!
+    complexID: String!
+    status: String!
+    name: String!
+    description: String
+    apartmentsCount: Int
+    createdAt: String
+    updatedAt: String
+}
+
+input CreateBlockInput {
+    complexID: String!
+    status: String!
+    name: String!
+    description: String
+    apartmentsCount: Int
+    createdAt: String
+    updatedAt: String
+}
+
+input UpdateBlockInput {
+    status: String
+    name: String
+    description: String
+    apartmentsCount: Int
+    createdAt: String
+    updatedAt: String
+}

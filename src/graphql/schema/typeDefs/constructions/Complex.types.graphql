@@ -1,0 +1,39 @@
+type Complex {
+    id: String!
+    managerID: String!
+    status: String!
+    address: String!
+    latitude: Float!
+    longitude: Float!
+    name: String!
+    description: String
+    blocksCount: Int
+    createdAt: String
+    updatedAt: String
+}
+
+input CreateComplexInput {
+    managerID: String!
+    status: String!
+    address: String!
+    latitude: Float!
+    longitude: Float!
+    name: String!
+    description: String
+    blocksCount: Int
+    createdAt: String
+    updatedAt: String
+}
+
+input UpdateComplexInput {
+    managerID: String
+    status: String
+    address: String
+    latitude: Float
+    longitude: Float
+    name: String
+    description: String
+    blocksCount: Int
+    createdAt: String
+    updatedAt: String
+}

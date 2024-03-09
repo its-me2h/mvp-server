@@ -1,0 +1,4 @@
+type Mutation {
+    createComplex(object: CreateComplexInput!): Complex!
+    updateComplex(id: ID!, object: UpdateComplexInput!): Complex!
+}

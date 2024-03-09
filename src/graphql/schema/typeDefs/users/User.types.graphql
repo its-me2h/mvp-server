@@ -12,7 +12,7 @@ type User {
     lastLoginDate: String
     createdAt: String
     updatedAt: String
-    admin: [Admin]
+    profile: [Profile]
 }
 
 input CreateUserInput {
@@ -45,3 +45,5 @@ input AuthenticationInput {
     phone: String!
     password: String!
 }
+
+union Profile = Admin | Manager | Client

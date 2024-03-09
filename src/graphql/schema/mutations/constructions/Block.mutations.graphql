@@ -1,0 +1,4 @@
+type Mutation {
+    createBlock(object: CreateBlockInput!): Block!
+    updateBlock(id: ID!, object: UpdateBlockInput!): Block!
+}

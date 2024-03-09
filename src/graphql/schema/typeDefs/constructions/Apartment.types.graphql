@@ -1,0 +1,26 @@
+type Apartment {
+    id: String!
+    blockID: String!
+    status: String!
+    name: String!
+    description: String
+    createdAt: String
+    updatedAt: String
+}
+
+input CreateApartmentInput {
+    blockID: String!
+    status: String!
+    name: String!
+    description: String
+    createdAt: String
+    updatedAt: String
+}
+
+input UpdateApartmentInput {
+    status: String!
+    name: String!
+    description: String
+    createdAt: String
+    updatedAt: String
+}

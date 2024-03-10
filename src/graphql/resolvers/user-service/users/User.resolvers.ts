@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid';
-import { User, Admin, Manager, Client } from '../../../models';
+import { User, Admin, Manager, Client } from '../../../../models/user-service/users';
 
 export const Query = {
     // Resolver function to get an user by ID

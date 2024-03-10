@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid';
-import { Complex } from '../../../../models/building-service/buildings';
+import { Complex } from '../../../../models/building-service';
 
 export const Query = {
     // Resolver function to get Complex by ID

@@ -1,18 +1,21 @@
 import { DataTypes } from 'sequelize';
-import sequelize from '../../configs/sequelize';
+import sequelize from '../../../configs/sequelize';
 
-export const Manager = sequelize.define('Manager', {
+export const Apartment = sequelize.define('Apartment', {
     id: {
         type: DataTypes.STRING,
         primaryKey: true,
     },
-    userID: {
-        type: DataTypes.STRING,
-    },
-    adminID: {
+    blockID: {
         type: DataTypes.STRING,
     },
     status: {
+        type: DataTypes.STRING,
+    },
+    name: {
+        type: DataTypes.STRING,
+    },
+    description: {
         type: DataTypes.STRING,
     },
 });

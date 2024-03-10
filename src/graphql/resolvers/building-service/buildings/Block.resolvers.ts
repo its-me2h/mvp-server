@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid';
-import { Block } from '../../../models';
+import { Block } from '../../../../models/building-service/buildings';
 
 export const Query = {
     // Resolver function to get Block by ID

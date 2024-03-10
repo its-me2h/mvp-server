@@ -1,12 +1,12 @@
 import { DataTypes } from 'sequelize';
-import sequelize from '../../configs/sequelize';
+import sequelize from '../../../configs/sequelize';
 
-export const Apartment = sequelize.define('Apartment', {
+export const Block = sequelize.define('Block', {
     id: {
         type: DataTypes.STRING,
         primaryKey: true,
     },
-    blockID: {
+    complexID: {
         type: DataTypes.STRING,
     },
     status: {
@@ -17,5 +17,8 @@ export const Apartment = sequelize.define('Apartment', {
     },
     description: {
         type: DataTypes.STRING,
+    },
+    apartmentsCount: {
+        type: DataTypes.INTEGER,
     },
 });

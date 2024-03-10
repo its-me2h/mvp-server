@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
-import sequelize from '../../configs/sequelize';
+import sequelize from '../../../configs/sequelize';
 
-export const Client = sequelize.define('Client', {
+export const Manager = sequelize.define('Manager', {
     id: {
         type: DataTypes.STRING,
         primaryKey: true,
@@ -9,7 +9,7 @@ export const Client = sequelize.define('Client', {
     userID: {
         type: DataTypes.STRING,
     },
-    apartmentID: {
+    adminID: {
         type: DataTypes.STRING,
     },
     status: {

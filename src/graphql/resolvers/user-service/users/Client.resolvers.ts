@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid';
-import { Client } from '../../../../models/user-service/users';
+import { Client } from '../../../../models/user-service';
 
 export const Query = {
     // Resolver function to get Client by ID

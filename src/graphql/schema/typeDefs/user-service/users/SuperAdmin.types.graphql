@@ -1,22 +1,19 @@
-type Manager {
+type SuperAdmin {
     id: ID!
     userID: String!
-    adminID: String!
     status: String!
     createdAt: String
     updatedAt: String
 }
 
-input CreateManagerInput {
+input CreateSuperAdminInput {
     userID: String!
-    adminID: String!
     status: String!
     createdAt: String
     updatedAt: String
 }
 
-input UpdateManagerInput {
-    adminID: String
+input UpdateSuperAdminInput {
     status: String
     updatedAt: String
 }

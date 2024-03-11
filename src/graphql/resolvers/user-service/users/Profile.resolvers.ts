@@ -1,4 +1,4 @@
-import { Admin, Client, Manager } from '../../../../models/user-service/users';
+import { Admin, Client, Manager } from '../../../../models/user-service';
 
 export const Profile = {
     __resolveType(profile: any) {

@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid';
-import { User, Admin, Manager, Client } from '../../../../models/user-service';
+import { User, Admin, Manager, Client, SuperAdmin } from '../../../../models/user-service';
 
 export const Query = {
     // Resolver function to get an user by ID
@@ -15,6 +15,7 @@ export const Mutation = {
         const user: any = await User.create({ id: uuid(), ...object });
         // Map the user's role to the corresponding model
         const roleMap: { [key: string]: any } = {
+            superAdmin: SuperAdmin,
             admin: Admin,
             manager: Manager,
             client: Client

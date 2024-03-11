@@ -46,4 +46,4 @@ input AuthenticationInput {
     password: String!
 }
 
-union Profile = Admin | Manager | Client
+union Profile = SuperAdmin | Admin | Manager | Client

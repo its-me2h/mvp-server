@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid';
-import { User, Admin, Manager, Client, SuperAdmin } from '../../../../models/user-service';
+import { User, Admin, Manager, Client, SuperAdmin, Account } from '../../../../models/user-service';
 
 export const Query = {
     // Resolver function to get an user by ID
@@ -11,8 +11,6 @@ export const Query = {
 export const Mutation = {
     // Resolver function to create a new user
     createUser: async (_: any, { object }: { object: any }) => {
-        // Create a new user with a unique ID
-        const user: any = await User.create({ id: uuid(), ...object });
         // Map the user's role to the corresponding model
         const roleMap: { [key: string]: any } = {
             superAdmin: SuperAdmin,
@@ -20,14 +18,23 @@ export const Mutation = {
             manager: Manager,
             client: Client
         };
-        const RoleModel = roleMap[object.role];
-        // If a RoleModel exists for the user's role, create a new role instance
-        if (RoleModel) {
-            await RoleModel.create({
-                id: uuid(),
-                userID: user.id
-            });
-        }
+        const role = roleMap[object.role];
+        // Create a new user with a unique ID
+        const user: any = await User.create({
+            id: uuid(),
+            ...object
+        });
+        // Create a new account with a unique ID
+        const account: any = await Account.create({
+            id: uuid(),
+            creatorID: 'con-text-ID',
+            status: 'active'
+        });
+        // Create a new role instance with a unique ID same as account ID
+        await role.create({
+            id: account.id,
+            userID: user.id,
+        });
         // Return the created user
         return user;
     },

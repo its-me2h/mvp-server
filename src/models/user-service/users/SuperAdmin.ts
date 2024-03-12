@@ -9,7 +9,4 @@ export const SuperAdmin = sequelize.define('SuperAdmin', {
     userID: {
         type: DataTypes.STRING,
     },
-    accountID: {
-        type: DataTypes.STRING,
-    },
 });

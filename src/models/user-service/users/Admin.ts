@@ -9,10 +9,4 @@ export const Admin = sequelize.define('Admin', {
     userID: {
         type: DataTypes.STRING,
     },
-    superAdminID: {
-        type: DataTypes.STRING,
-    },
-    accountID: {
-        type: DataTypes.STRING,
-    },
 });

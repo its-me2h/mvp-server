@@ -1,23 +1,18 @@
 type Manager {
     id: ID!
     userID: String!
-    adminID: String!
-    accountID: String!
     createdAt: String
     updatedAt: String
+    account: Account!
 }
 
 input CreateManagerInput {
     userID: String!
-    adminID: String!
-    accountID: String!
     createdAt: String
     updatedAt: String
 }
 
 input UpdateManagerInput {
-    adminID: String
-    accountID: String
-     createdAt: String
+    createdAt: String
     updatedAt: String
 }

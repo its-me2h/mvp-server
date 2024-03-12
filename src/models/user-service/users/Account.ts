@@ -1,15 +1,21 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../../../configs/sequelize';
 
-export const Client = sequelize.define('Client', {
+export const Account = sequelize.define('Account', {
     id: {
         type: DataTypes.STRING,
         primaryKey: true,
     },
-    userID: {
+    creatorID: {
         type: DataTypes.STRING,
     },
-    apartmentID: {
+    status: {
         type: DataTypes.STRING,
+    },
+    avatarURI: {
+        type: DataTypes.STRING,
+    },
+    lastLoginDate: {
+        type: DataTypes.DATE,
     },
 });

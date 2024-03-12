@@ -1,22 +1,18 @@
 type Admin {
     id: ID!
     userID: String!
-    superAdminID: String!
-    accountID: String!
     createdAt: String
     updatedAt: String
+    account: Account!
 }
 
 input CreateAdminInput {
     userID: String!
-    superAdminID: String!
-    accountID: String!
     createdAt: String
     updatedAt: String
 }
 
 input UpdateAdminInput {
-    superAdminID: String
     accountID: String
     updatedAt: String
 }

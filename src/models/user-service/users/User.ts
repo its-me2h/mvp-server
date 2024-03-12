@@ -9,9 +9,6 @@ export const User = sequelize.define('User', {
     role: {
         type: DataTypes.STRING,
     },
-    status: {
-        type: DataTypes.STRING,
-    },
     firstName: {
         type: DataTypes.STRING,
     },
@@ -30,11 +27,5 @@ export const User = sequelize.define('User', {
     },
     gender: {
         type: DataTypes.STRING,
-    },
-    avatarURI: {
-        type: DataTypes.STRING,
-    },
-    lastLogin: {
-        type: DataTypes.DATE,
     },
 });

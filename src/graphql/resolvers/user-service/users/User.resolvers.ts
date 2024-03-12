@@ -25,8 +25,7 @@ export const Mutation = {
         if (RoleModel) {
             await RoleModel.create({
                 id: uuid(),
-                userID: user.id,
-                status: user.status
+                userID: user.id
             });
         }
         // Return the created user
@@ -37,7 +36,7 @@ export const Mutation = {
         const user = await User.findByPk(id);
         // If user is not found, throw an error
         if (!user) {
-            throw new Error('User not found');
+            throw new Error('user not found');
         }
         // Update the user with the provided object
         await user.update(object);

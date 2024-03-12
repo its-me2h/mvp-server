@@ -1,15 +1,12 @@
 type User {
     id: ID!
     role: String!
-    status: String!
     firstName: String
     lastName: String
     password: String!
     phone: String
     age: Int
     gender: String
-    avatarUrl: String
-    lastLoginDate: String
     createdAt: String
     updatedAt: String
     profile: [Profile]
@@ -17,27 +14,24 @@ type User {
 
 input CreateUserInput {
     role: String!
-    status: String!
     firstName: String
     lastName: String
     password: String!
     phone: String!
     age: Int
     gender: String
-    avatarUrl: String
     createdAt: String
     updatedAt: String
 }
 
 input UpdateUserInput {
-    status: String
     firstName: String
     lastName: String
     password: String
     phone: String
     age: Int
     gender: String
-    avatarUrl: String
+    createdAt: String
     updatedAt: String
 }
 

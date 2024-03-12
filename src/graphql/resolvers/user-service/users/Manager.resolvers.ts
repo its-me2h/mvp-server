@@ -18,7 +18,7 @@ export const Mutation = {
         const manager = await Manager.findByPk(id);
         // If Manager is not found, throw an error
         if (!manager) {
-            throw new Error('Manager not found');
+            throw new Error('manager not found');
         }
         // Update the Manager with the provided object
         await manager.update(object);

@@ -12,7 +12,7 @@ export const Client = sequelize.define('Client', {
     apartmentID: {
         type: DataTypes.STRING,
     },
-    status: {
+    accountID: {
         type: DataTypes.STRING,
     },
 });

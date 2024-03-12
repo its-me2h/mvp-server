@@ -18,7 +18,7 @@ export const Mutation = {
         const client = await Client.findByPk(id);
         // If client is not found, throw an error
         if (!client) {
-            throw new Error('Client not found');
+            throw new Error('client not found');
         }
         // Update the client with the provided object
         await client.update(object);

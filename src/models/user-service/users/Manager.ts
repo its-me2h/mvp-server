@@ -12,7 +12,7 @@ export const Manager = sequelize.define('Manager', {
     adminID: {
         type: DataTypes.STRING,
     },
-    status: {
+    accountID: {
         type: DataTypes.STRING,
     },
 });

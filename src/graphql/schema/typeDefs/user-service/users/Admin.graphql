@@ -2,7 +2,7 @@ type Admin {
     id: ID!
     userID: String!
     superAdminID: String!
-    status: String!
+    accountID: String!
     createdAt: String
     updatedAt: String
 }
@@ -10,13 +10,13 @@ type Admin {
 input CreateAdminInput {
     userID: String!
     superAdminID: String!
-    status: String!
+    accountID: String!
     createdAt: String
     updatedAt: String
 }
 
 input UpdateAdminInput {
     superAdminID: String
-    status: String
+    accountID: String
     updatedAt: String
 }

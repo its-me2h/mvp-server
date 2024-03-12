@@ -18,7 +18,7 @@ export const Mutation = {
         const admin = await Admin.findByPk(id);
         // If admin is not found, throw an error
         if (!admin) {
-            throw new Error('Admin not found');
+            throw new Error('admin not found');
         }
         // Update the admin with the provided object
         await admin.update(object);

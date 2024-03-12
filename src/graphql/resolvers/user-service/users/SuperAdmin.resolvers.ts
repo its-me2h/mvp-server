@@ -18,7 +18,7 @@ export const Mutation = {
         const superadmin = await SuperAdmin.findByPk(id);
         // If Superadmin is not found, throw an error
         if (!superadmin) {
-            throw new Error('SuperAdmin not found');
+            throw new Error('superAdmin not found');
         }
         // Update the Superadmin with the provided object
         await superadmin.update(object);

@@ -9,10 +9,4 @@ export const Manager = sequelize.define('Manager', {
     userID: {
         type: DataTypes.STRING,
     },
-    adminID: {
-        type: DataTypes.STRING,
-    },
-    accountID: {
-        type: DataTypes.STRING,
-    },
 });

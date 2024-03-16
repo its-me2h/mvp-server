@@ -1,0 +1,27 @@
+type Account {
+    id: ID!
+    creatorID: String!
+    status: String!
+    avatarURI: String
+    lastLoginDate: String
+    createdAt: String
+    updatedAt: String
+}
+
+input CreateAccountInput {
+    creatorID: String!
+    status: String!
+    avatarURI: String
+    lastLoginDate: String
+    createdAt: String
+    updatedAt: String
+}
+
+input UpdateAccountInput {
+    creatorID: String
+    status: String
+    avatarURI: String
+    lastLoginDate: String
+    createdAt: String
+    updatedAt: String
+}

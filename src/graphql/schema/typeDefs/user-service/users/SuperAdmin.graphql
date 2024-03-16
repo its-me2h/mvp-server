@@ -1,14 +1,13 @@
 type SuperAdmin {
     id: ID!
     userID: String!
-    accountID: String!
     createdAt: String
     updatedAt: String
+    account: Account!
 }
 
 input CreateSuperAdminInput {
     userID: String!
-    accountID: String!
     createdAt: String
     updatedAt: String
 }

@@ -1,8 +1,10 @@
 type User {
     id: ID!
     role: String!
+    userName: String!
     firstName: String
     lastName: String
+    email: String
     password: String!
     phone: String
     age: Int
@@ -14,8 +16,10 @@ type User {
 
 input CreateUserInput {
     role: String!
+    userName: String!
     firstName: String
     lastName: String
+    email: String
     password: String!
     phone: String!
     age: Int
@@ -25,8 +29,10 @@ input CreateUserInput {
 }
 
 input UpdateUserInput {
+    userName: String
     firstName: String
     lastName: String
+    email: String
     password: String
     phone: String
     age: Int
@@ -36,7 +42,7 @@ input UpdateUserInput {
 }
 
 input AuthenticationInput {
-    phone: String!
+    userName: String!
     password: String!
 }
 

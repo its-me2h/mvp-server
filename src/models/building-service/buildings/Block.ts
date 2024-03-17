@@ -18,7 +18,4 @@ export const Block = sequelize.define('Block', {
     description: {
         type: DataTypes.STRING,
     },
-    apartmentsCount: {
-        type: DataTypes.INTEGER,
-    },
 });

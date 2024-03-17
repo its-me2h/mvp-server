@@ -1,3 +1,0 @@
-type Query {
-    apartment(id: ID!): Apartment
-}

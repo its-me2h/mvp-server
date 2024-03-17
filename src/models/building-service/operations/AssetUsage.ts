@@ -6,16 +6,19 @@ export const AssetUsage = sequelize.define('AssetUsage', {
         type: DataTypes.STRING,
         primaryKey: true,
     },
+    clientID: {
+        type: DataTypes.STRING,
+    },
     assetID: {
         type: DataTypes.STRING,
     },
-    apartmentID: {
+    subscriptionID: {
         type: DataTypes.STRING,
     },
-    usageStart: {
+    usageStartDate: {
         type: DataTypes.DATE,
     },
-    usageEnd: {
+    usageEndDate: {
         type: DataTypes.DATE,
     },
 });

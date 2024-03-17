@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../../../configs/sequelize';
 
-export const RegisterTransactions = sequelize.define('RegisterTransactions', {
+export const Transactions = sequelize.define('Transactions', {
     id: {
         type: DataTypes.STRING,
         primaryKey: true,

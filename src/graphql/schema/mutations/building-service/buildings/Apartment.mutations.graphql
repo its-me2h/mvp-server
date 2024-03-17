@@ -1,4 +1,0 @@
-type Mutation {
-    createApartment(object: CreateApartmentInput!): Apartment!
-    updateApartment(id: ID!, object: UpdateApartmentInput!): Apartment!
-}

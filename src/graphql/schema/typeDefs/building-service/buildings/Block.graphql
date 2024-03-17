@@ -4,7 +4,6 @@ type Block {
     status: String!
     name: String!
     description: String
-    apartmentsCount: Int
     createdAt: String
     updatedAt: String
 }
@@ -14,7 +13,6 @@ input CreateBlockInput {
     status: String!
     name: String!
     description: String
-    apartmentsCount: Int
     createdAt: String
     updatedAt: String
 }
@@ -23,7 +21,6 @@ input UpdateBlockInput {
     status: String
     name: String
     description: String
-    apartmentsCount: Int
     createdAt: String
     updatedAt: String
 }

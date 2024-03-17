@@ -6,7 +6,7 @@ export const Complex = sequelize.define('Complex', {
         type: DataTypes.STRING,
         primaryKey: true,
     },
-    managerID: {
+    creatorID: {
         type: DataTypes.STRING,
     },
     status: {

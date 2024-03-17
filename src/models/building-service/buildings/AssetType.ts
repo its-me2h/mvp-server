@@ -1,18 +1,21 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../../../configs/sequelize';
 
-export const Asset = sequelize.define('Asset', {
+export const AssetType = sequelize.define('AssetType', {
     id: {
         type: DataTypes.STRING,
         primaryKey: true,
     },
-    typeID: {
+    name: {
         type: DataTypes.STRING,
     },
-    blockID: {
+    description: {
         type: DataTypes.STRING,
     },
-    status: {
+    avatarURI: {
         type: DataTypes.STRING,
+    },
+    count: {
+        type: DataTypes.INTEGER,
     },
 });

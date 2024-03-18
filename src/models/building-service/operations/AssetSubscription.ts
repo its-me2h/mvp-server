@@ -1,25 +1,22 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../../../configs/sequelize';
 
-export const Subscription = sequelize.define('Subscription', {
+export const AssetSubscription = sequelize.define('AssetSubscription', {
     id: {
         type: DataTypes.STRING,
         primaryKey: true,
     },
-    clientID: {
+    type: {
         type: DataTypes.STRING,
-    },
-    apartmentID: {
-        type: DataTypes.STRING,
-    },
-    subscriptionStart: {
-        type: DataTypes.DATE,
-    },
-    subscriptionEnd: {
-        type: DataTypes.DATE,
     },
     amount: {
         type: DataTypes.FLOAT,
+    },
+    startDate: {
+        type: DataTypes.DATE,
+    },
+    endDate: {
+        type: DataTypes.DATE,
     },
 });
 

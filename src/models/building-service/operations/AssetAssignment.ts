@@ -1,24 +1,19 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../../../configs/sequelize';
 
-export const Transactions = sequelize.define('Transactions', {
+export const AssetAssignment = sequelize.define('AssetAssignment', {
     id: {
         type: DataTypes.STRING,
         primaryKey: true,
     },
-    registerId: {
+    assetUsageID: {
         type: DataTypes.STRING,
     },
-    type: {
-        type: DataTypes.STRING,
-    },
-    purpose: {
+    name: {
         type: DataTypes.STRING,
     },
     description: {
         type: DataTypes.STRING,
     },
-    amount: {
-        type: DataTypes.FLOAT,
-    },
 });
+

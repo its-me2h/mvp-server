@@ -9,12 +9,6 @@ export const Register = sequelize.define('Register', {
     blockID: {
         type: DataTypes.STRING,
     },
-    receipts: {
-        type: DataTypes.FLOAT,
-    },
-    expenses: {
-        type: DataTypes.FLOAT,
-    },
     balance: {
         type: DataTypes.FLOAT,
     },

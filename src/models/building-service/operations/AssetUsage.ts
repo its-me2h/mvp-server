@@ -15,10 +15,4 @@ export const AssetUsage = sequelize.define('AssetUsage', {
     subscriptionID: {
         type: DataTypes.STRING,
     },
-    usageStartDate: {
-        type: DataTypes.DATE,
-    },
-    usageEndDate: {
-        type: DataTypes.DATE,
-    },
 });

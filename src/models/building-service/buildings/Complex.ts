@@ -6,10 +6,16 @@ export const Complex = sequelize.define('Complex', {
         type: DataTypes.STRING,
         primaryKey: true,
     },
-    managerID: {
+    creatorID: {
         type: DataTypes.STRING,
     },
     status: {
+        type: DataTypes.STRING,
+    },
+    name: {
+        type: DataTypes.STRING,
+    },
+    description: {
         type: DataTypes.STRING,
     },
     address: {
@@ -20,12 +26,6 @@ export const Complex = sequelize.define('Complex', {
     },
     longitude: {
         type: DataTypes.FLOAT,
-    },
-    name: {
-        type: DataTypes.STRING,
-    },
-    description: {
-        type: DataTypes.STRING,
     },
     blocksCount: {
         type: DataTypes.INTEGER,

@@ -1,4 +1,0 @@
-type Mutation {
-    createSuperAdmin(object: CreateSuperAdminInput!): SuperAdmin!
-    updateSuperAdmin(id: ID!, object: UpdateSuperAdminInput!): SuperAdmin!
-}

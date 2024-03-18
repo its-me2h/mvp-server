@@ -20,4 +20,5 @@ sequelize
         console.error('Unable to connect to the database:', error);
     });
 
+// sequelize.sync()
 export default sequelize;

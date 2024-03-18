@@ -6,10 +6,7 @@ export const User = sequelize.define('User', {
         type: DataTypes.STRING,
         primaryKey: true,
     },
-    role: {
-        type: DataTypes.STRING,
-    },
-    userName: {
+    username: {
         type: DataTypes.STRING,
         unique: true,
     },
@@ -23,12 +20,12 @@ export const User = sequelize.define('User', {
         type: DataTypes.STRING,
         unique: true,
     },
-    password: {
-        type: DataTypes.STRING,
-    },
     phone: {
         type: DataTypes.STRING,
         unique: true,
+    },
+    password: {
+        type: DataTypes.STRING,
     },
     age: {
         type: DataTypes.INTEGER,

@@ -1,49 +1,49 @@
 type User {
     id: ID!
-    role: String!
-    userName: String!
+    username: String
     firstName: String
     lastName: String
     email: String
-    password: String!
     phone: String
     age: Int
-    gender: String
+    gender: Gender
     createdAt: String
     updatedAt: String
-    profile: [Profile]
+    accounts: [Account]
 }
 
 input CreateUserInput {
-    role: String!
-    userName: String!
+    username: String!
     firstName: String
     lastName: String
     email: String
+    phone: String
     password: String!
-    phone: String!
     age: Int
-    gender: String
+    gender: Gender
     createdAt: String
     updatedAt: String
 }
 
 input UpdateUserInput {
-    userName: String
+    username: String
     firstName: String
     lastName: String
     email: String
-    password: String
     phone: String
+    password: String
     age: Int
-    gender: String
+    gender: Gender
     createdAt: String
     updatedAt: String
 }
 
 input AuthenticationInput {
-    userName: String!
+    username: String!
     password: String!
 }
 
-union Profile = Account | SuperAdmin | Admin | Manager | Client
+enum Gender {
+    male
+    female
+}

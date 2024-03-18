@@ -6,7 +6,13 @@ export const Account = sequelize.define('Account', {
         type: DataTypes.STRING,
         primaryKey: true,
     },
+    userID: {
+        type: DataTypes.STRING,
+    },
     creatorID: {
+        type: DataTypes.STRING,
+    },
+    role: {
         type: DataTypes.STRING,
     },
     status: {

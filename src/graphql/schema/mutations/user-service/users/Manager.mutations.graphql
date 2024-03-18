@@ -1,4 +1,0 @@
-type Mutation {
-    createManager(object: CreateManagerInput!): Manager!
-    updateManager(id: ID!, object: UpdateManagerInput!): Manager!
-}

@@ -1,4 +1,5 @@
 import { v4 as uuid } from 'uuid';
+import generator from 'generate-password';
 import { User } from '../../../../models/user-service';
 
 export const Query = {
@@ -13,7 +14,7 @@ export const Mutation = {
     createUser: async (_: any, { object }: { object: any }) => {
         return await User.create({
             id: uuid(),
-            password: 'password',
+            password: generator.generate({ length: 8, numbers: true }),
             ...object
         });
     },

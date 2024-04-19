@@ -1,49 +1,46 @@
 type User {
     id: ID!
-    username: String
-    firstName: String
-    lastName: String
-    email: String
+    firstName: String!
+    lastName: String!
+    email: String!
     phone: String
-    age: Int
-    gender: Gender
+    password: String
+    birthDate: String!
+    gender: Gender!
     createdAt: String
     updatedAt: String
     accounts: [Account]
 }
 
 input CreateUserInput {
-    username: String!
-    firstName: String
-    lastName: String
-    email: String
+    firstName: String!
+    lastName: String!
+    email: String!
     phone: String
-    password: String!
-    age: Int
-    gender: Gender
+    birthDate: String!
+    gender: Gender!
     createdAt: String
     updatedAt: String
 }
 
 input UpdateUserInput {
-    username: String
     firstName: String
     lastName: String
     email: String
     phone: String
     password: String
-    age: Int
+    birthDate: String
     gender: Gender
     createdAt: String
     updatedAt: String
 }
 
 input AuthenticationInput {
-    username: String!
+    email: String!
     password: String!
 }
 
 enum Gender {
-    male
-    female
+    MALE
+    FEMALE
 }

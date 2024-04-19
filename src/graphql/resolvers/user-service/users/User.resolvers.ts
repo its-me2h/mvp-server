@@ -13,6 +13,7 @@ export const Mutation = {
     createUser: async (_: any, { object }: { object: any }) => {
         return await User.create({
             id: uuid(),
+            password: 'password',
             ...object
         });
     },

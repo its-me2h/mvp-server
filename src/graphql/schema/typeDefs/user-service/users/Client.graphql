@@ -1,11 +1,12 @@
 type Client {
     accountID: String!
-    apartmentID: String
+    apartmentID: String!
     createdAt: String
     updatedAt: String
 }
 
 input CreateClientInput {
+    accountID: String!
     apartmentID: String!
     createdAt: String
     updatedAt: String

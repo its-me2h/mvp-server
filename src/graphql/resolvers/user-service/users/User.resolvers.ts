@@ -1,4 +1,5 @@
 import { v4 as uuid } from 'uuid';
+import bcrypt from 'bcrypt';
 import generator from 'generate-password';
 import { User } from '../../../../models/user-service';
 
@@ -12,11 +13,15 @@ export const Query = {
 export const Mutation = {
     // Resolver function to create a user
     createUser: async (_: any, { object }: { object: any }) => {
-        return await User.create({
+        const randomPassword = generator.generate({ length: 8, numbers: true });
+        const hashedPassword = await bcrypt.hash(randomPassword, 10);
+        const user: any = await User.create({
             id: uuid(),
-            password: generator.generate({ length: 8, numbers: true }),
+            password: hashedPassword,
             ...object
         });
+        if (!user) throw new Error('User not created');
+        return user
     },
     // Resolver function to update an user by ID
     updateUser: async (_: any, { id, object }: { id: string, object: any }) => {

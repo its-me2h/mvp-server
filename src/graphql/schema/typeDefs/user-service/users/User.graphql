@@ -4,7 +4,6 @@ type User {
     lastName: String!
     email: String!
     phone: String
-    password: String
     birthDate: String!
     gender: Gender!
     createdAt: String

@@ -11,12 +11,10 @@ export const Query = {
 export const Mutation = {
     // Resolver function to create an account
     createAccount: async (_: any, { object }: { object: any }) => {
-        const account: any = await Account.create({
+        return await Account.create({
             id: uuid(),
             ...object
         });
-        if (object.role === 'CLIENT') await Client.create({ accountID: account.id });
-        return account;
     },
     // Resolver function to update an Account by ID
     updateAccount: async (_: any, { id, object }: { id: string, object: any }) => {

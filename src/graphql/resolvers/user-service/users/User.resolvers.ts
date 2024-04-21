@@ -2,6 +2,7 @@ import { v4 as uuid } from 'uuid';
 import bcrypt from 'bcrypt';
 import generator from 'generate-password';
 import { User } from '../../../../models/user-service';
+import { sendAccountCredentialsEmail } from '../../../../utils/email-service/mailers';
 
 export const Query = {
     // Resolver function to get an user by ID
@@ -20,7 +21,7 @@ export const Mutation = {
             password: hashedPassword,
             ...object
         });
-        if (!user) throw new Error('User not created');
+        sendAccountCredentialsEmail(user.email, randomPassword)  
         return user
     },
     // Resolver function to update an user by ID

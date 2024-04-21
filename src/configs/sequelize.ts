@@ -2,12 +2,12 @@ import 'dotenv/config';
 import { Sequelize } from 'sequelize';
 
 const sequelize = new Sequelize(
-    process.env.DB_NAME!,
-    process.env.DB_USER!,
-    process.env.DB_PASSWORD,
+    process.env.SEQUELIZE_DB!,
+    process.env.SEQUELIZE_USERNAME!,
+    process.env.SEQUELIZE_PASSWORD,
     {
-        host: process.env.DB_HOST,
-        dialect: 'mysql',
+        host: process.env.SEQUELIZE_HOST,
+        dialect: 'postgres',
     }
 );
 

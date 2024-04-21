@@ -1,0 +1,1 @@
+export { sendAccountCredentialsEmail } from './sendAccountCredentialsEmail'

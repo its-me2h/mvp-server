@@ -3,7 +3,7 @@ type Account {
     userID: String!
     creatorID: String!
     role: Role!
-    status: String!
+    status: Status!
     avatarURI: String
     lastLoginDate: String
     createdAt: String
@@ -34,6 +34,13 @@ enum Role {
     ADMIN
     MANAGER
     CLIENT
+}
+
+enum Status {
+    PENDING
+    ACTIVE
+    INACTIVE
+    DELETED
 }
 
 union RoleDetails = Client

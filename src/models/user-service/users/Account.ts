@@ -12,9 +12,6 @@ export const Account = sequelize.define('Account', {
     creatorID: {
         type: DataTypes.STRING,
     },
-    role: {
-        type: DataTypes.STRING,
-    },
     status: {
         type: DataTypes.STRING,
     },

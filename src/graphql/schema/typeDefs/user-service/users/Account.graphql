@@ -2,7 +2,6 @@ type Account {
     id: ID!
     userID: String!
     creatorID: String!
-    role: Role!
     status: Status!
     avatarURI: String
     lastLoginDate: String
@@ -14,7 +13,6 @@ type Account {
 input CreateAccountInput {
     userID: String!
     creatorID: String!
-    role: Role!
     status: String!
     avatarURI: String
     createdAt: String
@@ -27,13 +25,6 @@ input UpdateAccountInput {
     lastLoginDate: String
     createdAt: String
     updatedAt: String
-}
-
-enum Role {
-    SUPERADMIN
-    ADMIN
-    MANAGER
-    CLIENT
 }
 
 enum Status {

@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
 import { User } from '../../../../models/user-service';
+import { generateTokens } from '../../../../utils/jwt/generateTokens';
 
 export const Mutation = {
     // Resolver function to authenticate a user
@@ -14,16 +14,7 @@ export const Mutation = {
             if (!isPasswordValid) throw new Error('Invalid password');
 
             // Generate JWT tokens
-            const accessToken = jwt.sign(
-                { id: user.id, role: user.role },
-                process.env.ACCESS_TOKEN_SECRET!,
-                { expiresIn: '10m' },
-            );
-            const refreshToken = jwt.sign(
-                { id: user.id },
-                process.env.REFRESH_TOKEN_SECRET!,
-                { expiresIn: '7d' },
-            );
+            const { accessToken, refreshToken } = generateTokens(user);
 
             // Return accessToken
             return { accessToken };

@@ -1,11 +1,4 @@
 type Mutation {
     createUser(object: CreateUserInput!): User!
     updateUser(id: ID!, object: UpdateUserInput!): User!
-    authenticateUser(email: String!, password: String!): AuthPayload!
-}
-
-type AuthPayload {
-    user: User!
-    accessToken: String!
-    refreshToken: String!
 }

@@ -1,0 +1,8 @@
+type Authentication {
+    accessToken: String!
+}
+
+input AuthenticationInput {
+    email: String!
+    password: String!
+}

@@ -36,11 +36,6 @@ input UpdateUserInput {
     updatedAt: String
 }
 
-input AuthenticationInput {
-    email: String!
-    password: String!
-}
-
 enum Role {
     SUPERADMIN
     ADMIN

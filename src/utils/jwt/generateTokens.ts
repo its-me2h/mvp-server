@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-export function generateAccessToken(user: any): string {
+export function generateAccessToken(user: any) {
     return jwt.sign(
         { id: user.id, role: user.role },
         process.env.ACCESS_TOKEN_SECRET!,
@@ -8,7 +8,7 @@ export function generateAccessToken(user: any): string {
     );
 }
 
-export function generateRefreshToken(user: any): string {
+export function generateRefreshToken(user: any) {
     return jwt.sign(
         { id: user.id },
         process.env.REFRESH_TOKEN_SECRET!,

@@ -1,8 +1,7 @@
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
-import { buildSubgraphSchema } from '@apollo/subgraph';
 import apolloConfig from './src/configs/apollo';
-import { typeDefs, resolvers } from './src/graphql';
+import { schema } from './src/graphql';
 
 const app: any = express();
 app.use(express.json());
@@ -10,8 +9,7 @@ app.use(express.json());
 // Create an ApolloServer instance
 const apollo = new ApolloServer({
     ...apolloConfig,
-    // Build the GraphQL schema
-    schema: buildSubgraphSchema([{ typeDefs, resolvers }])
+    schema,
 });
 
 apollo.start().then(() => {

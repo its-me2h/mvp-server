@@ -1,7 +1,7 @@
 import { mapSchema, getDirective, MapperKind } from '@graphql-tools/utils';
 import { GraphQLSchema, GraphQLError, defaultFieldResolver } from 'graphql';
 
-export function authDirective(schema: GraphQLSchema, directiveName: string) {
+export default function authDirective(schema: GraphQLSchema, directiveName: string) {
     return mapSchema(schema, {
         [MapperKind.OBJECT_FIELD]: (fieldConfig) => {
             // Get the auth directive for the field

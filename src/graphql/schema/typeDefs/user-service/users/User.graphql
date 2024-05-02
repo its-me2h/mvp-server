@@ -1,12 +1,12 @@
 type User {
-    id: ID!
-    role: Role!
-    firstName: String!
-    lastName: String!
-    email: String!
+    id: ID
+    role: Role
+    firstName: String
+    lastName: String
+    email: String @auth(requires: [{ role: SUPERADMIN, access: [SUPERADMIN, ADMIN, MANAGER, CLIENT] }, { role: ADMIN, access: [MANAGER, CLIENT] }, { role: MANAGER, access: [MANAGER, CLIENT] }])
     phone: String
-    birthDate: String!
-    gender: Gender!
+    birthDate: String
+    gender: Gender
     createdAt: String
     updatedAt: String
     accounts: [Account]
@@ -20,8 +20,6 @@ input CreateUserInput {
     phone: String
     birthDate: String!
     gender: Gender!
-    createdAt: String
-    updatedAt: String
 }
 
 input UpdateUserInput {

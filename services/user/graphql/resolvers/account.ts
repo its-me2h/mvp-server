@@ -1,13 +1,6 @@
 import { v4 as uuid } from 'uuid';
 import { Account } from '../../models';
 
-export const Query = {
-    // Resolver function to get an Account by ID
-    getAccountByID: async (_: any, { id }: { id: string }) => {
-        return await Account.findByPk(id);
-    },
-};
-
 export const Mutation = {
     // Resolver function to create an account
     createAccount: async (_: any, { object }: { object: any }) => {

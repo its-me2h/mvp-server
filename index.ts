@@ -1,8 +1,8 @@
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
-import apolloConfig from './src/configs/apollo';
-import { schema } from './src/graphql';
-import { verifyAccessToken } from './src/utils/jwt/verifyTokens'
+import apolloConfig from './configs/apollo';
+import { schema } from './utils/schemaManagement';
+import { verifyAccessToken } from './services/user/utils/jwt/verifyTokens'
 
 const app: any = express();
 app.use(express.json());
@@ -13,7 +13,7 @@ const apollo = new ApolloServer({
     schema,
     context: ({ req }) => {
         // Get the user token from the headers.
-        const token = req.headers.authorization || '';
+        const token = req.headers.Authorization as string || req.headers.authorization || '';
         const user = verifyAccessToken(token);
         return { user };
     },

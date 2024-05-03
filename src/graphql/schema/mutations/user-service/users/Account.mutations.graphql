@@ -1,4 +1,0 @@
-type Mutation {
-    createAccount(object: CreateAccountInput!): Account!
-    updateAccount(id: ID!, object: UpdateAccountInput!): Account!
-}

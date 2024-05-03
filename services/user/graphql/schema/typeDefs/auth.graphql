@@ -1,0 +1,15 @@
+type Authentication {
+    accessToken: String
+}
+
+input AuthenticationInput {
+    email: String!
+    password: String!
+}
+
+directive @auth(requires: [AccessRequirement]) on OBJECT | FIELD_DEFINITION
+
+input AccessRequirement {
+    role: Role!
+    access: [Role]
+}

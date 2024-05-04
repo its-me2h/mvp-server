@@ -2,11 +2,11 @@ import { DataTypes } from 'sequelize';
 import sequelize from '../../../configs/sequelize';
 
 export const Client = sequelize.define('Client', {
-    accountID: {
+    accountId: {
         type: DataTypes.STRING,
         primaryKey: true,
     },
-    apartmentID: {
+    apartmentId: {
         type: DataTypes.STRING,
     },
 });

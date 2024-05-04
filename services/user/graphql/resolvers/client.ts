@@ -1,12 +1,5 @@
 import { Client } from '../../models';
 
-export const Query = {
-    // Resolver function to get a client by accountID
-    getClientByAccountID: async (_: any, { accountID }: { accountID: string }) => {
-        return await Client.findByPk(accountID);
-    },
-};
-
 export const Mutation = {
     // Resolver function to create an account
     createClient: async (_: any, { object }: { object: any }) => {

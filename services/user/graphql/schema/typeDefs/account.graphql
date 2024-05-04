@@ -1,7 +1,7 @@
 type Account {
     id: ID
-    userID: String
-    creatorID: String
+    userId: String
+    creatorId: String
     status: Status
     avatarURI: String
     lastLoginDate: String
@@ -11,8 +11,8 @@ type Account {
 }
 
 input CreateAccountInput {
-    userID: String!
-    creatorID: String!
+    userId: String!
+    creatorId: String!
     status: Status!
     avatarURI: String
 }

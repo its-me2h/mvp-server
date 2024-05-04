@@ -8,8 +8,8 @@ export const Mutation = {
         });
     },
     // Resolver function to update the Client by ID
-    updateClient: async (_: any, { accountID, object }: { accountID: string, object: any }) => {
-        const client = await Client.findByPk(accountID);
+    updateClient: async (_: any, { accountId, object }: { accountId: string, object: any }) => {
+        const client = await Client.findByPk(accountId);
         if (!client) throw new Error('Client not found');
         return client.update(object);
     },

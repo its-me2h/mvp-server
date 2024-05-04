@@ -6,10 +6,10 @@ export const Account = sequelize.define('Account', {
         type: DataTypes.STRING,
         primaryKey: true,
     },
-    userID: {
+    userId: {
         type: DataTypes.STRING,
     },
-    creatorID: {
+    creatorId: {
         type: DataTypes.STRING,
     },
     status: {

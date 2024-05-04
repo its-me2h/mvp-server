@@ -2,7 +2,7 @@ import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import apolloConfig from './configs/apollo';
 import { schema } from './utils/schemaManagement';
-import { verifyAccessToken } from './services/user/utils/jwt/verifyTokens'
+import { verifyAccessToken } from './src/user-service/utils/jwt/verifyTokens'
 
 const app: any = express();
 app.use(express.json());

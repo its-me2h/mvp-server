@@ -23,6 +23,7 @@ export default function authDirective(schema: GraphQLSchema, directiveName: stri
                     const requires = auth['requires'];
                     if (requires) {
                         const contextRole = context.user.role;
+                        const targetRole = source?.role || args?.object?.role || 'UNDEFINED';
                         const matchedRole = requires.find((requirement: any) => requirement.role === contextRole);
                         // Throw an error if the user's role does not match the required roles
                         if (!matchedRole) {
@@ -34,8 +35,8 @@ export default function authDirective(schema: GraphQLSchema, directiveName: stri
                             });
                         }
                         // Throw an error if the user's role does not have access to the source's role
-                        if (matchedRole.access && !matchedRole.access.includes(source.role)) {
-                            throw new GraphQLError(`Forbidden, Access to the ${info.fieldName || info.parentType} of ${source.role} is denied for ${contextRole} role.`, {
+                        if (matchedRole.access && !matchedRole.access.includes(targetRole)) {
+                            throw new GraphQLError(`Forbidden, Access to the ${info.fieldName || info.parentType} of ${targetRole} is denied for ${contextRole} role.`, {
                                 extensions: {
                                     code: 'FORBIDDEN_ACCESS',
                                     httpStatusCode: 403

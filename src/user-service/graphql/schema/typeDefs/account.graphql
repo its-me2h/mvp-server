@@ -1,35 +1,39 @@
 type Account {
     id: ID
-    userId: String
     creatorId: String
-    status: Status
+    firstName: String
+    lastName: String
+    birthDate: String
+    gender: Gender
     avatarURI: String
     lastLoginDate: String
-    createdAt: String
-    updatedAt: String
     roleDetails: RoleDetails
 }
 
 input CreateAccountInput {
-    userId: String!
+    id: ID!
     creatorId: String!
-    status: Status!
+    firstName: String!
+    lastName: String!
+    birthDate: String
+    gender: Gender!
     avatarURI: String
+    lastLoginDate: String
 }
 
 input UpdateAccountInput {
-    status: Status
+    creatorId: String
+    firstName: String
+    lastName: String
+    birthDate: String
+    gender: Gender
     avatarURI: String
     lastLoginDate: String
-    createdAt: String
-    updatedAt: String
 }
 
-enum Status {
-    PENDING
-    ACTIVE
-    INACTIVE
-    DELETED
+enum Gender {
+    MALE
+    FEMALE
 }
 
 union RoleDetails = Client

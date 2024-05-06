@@ -1,4 +1,4 @@
 type Mutation {
-    createAccount(object: CreateAccountInput!): Account!
-    updateAccount(id: ID!, object: UpdateAccountInput!): Account!
+    createAccount(input: CreateAccountInput!): Account!
+    updateAccount(id: ID!, input: UpdateAccountInput!): Account!
 }

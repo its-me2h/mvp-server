@@ -6,13 +6,19 @@ export const Account = sequelize.define('Account', {
         type: DataTypes.STRING,
         primaryKey: true,
     },
-    userId: {
-        type: DataTypes.STRING,
-    },
     creatorId: {
         type: DataTypes.STRING,
     },
-    status: {
+    firstName: {
+        type: DataTypes.STRING,
+    },
+    lastName: {
+        type: DataTypes.STRING,
+    },
+    birthDate: {
+        type: DataTypes.DATE,
+    },
+    gender: {
         type: DataTypes.STRING,
     },
     avatarURI: {

@@ -1,4 +1,4 @@
-import { Client } from '../../models';
+import { Client, User } from '../../models';
 
 export const RoleDetails = {
     __resolveType(roleDetails: any) {
@@ -12,12 +12,15 @@ export const RoleDetails = {
 
 export const Account = {
     roleDetails: async (account: any) => {
-        // Determine the roleDetails model based on the user's role
-        switch (account.role) {
+        // Find the user associated with the account
+        const user: any = await User.findByPk(account.id);
+        switch (user.role) {
+            // If the user is a CLIENT, return their client details
             case 'CLIENT':
-                return await Client.findOne({ where: { accountID: account.id } });
+                return await Client.findAll({ where: { userId: user.id } });
+            // For other roles, return null (no role details)
             default:
                 return null
         }
     },
-}
+};

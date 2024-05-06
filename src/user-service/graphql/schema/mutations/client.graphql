@@ -1,4 +1,3 @@
 type Mutation {
-    createClient(object: CreateClientInput!): Client!
-    updateClient(accountId: ID!, object: UpdateClientInput!): Client!
+    createClient(input: CreateClientInput!): Client!
 }

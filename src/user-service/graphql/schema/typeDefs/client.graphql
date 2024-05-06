@@ -1,17 +1,15 @@
 type Client {
-    accountId: String
+    id: ID
+    userId: String
+    complexId: String
+    blockId: String
     apartmentId: String
-    createdAt: String
-    updatedAt: String
 }
 
 input CreateClientInput {
-    accountId: String!
+    id: ID!
+    userId: String!
+    complexId: String!
+    blockId: String!
     apartmentId: String!
-}
-
-input UpdateClientInput {
-    apartmentId: String
-    createdAt: String
-    updatedAt: String
 }

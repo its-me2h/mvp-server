@@ -7,7 +7,7 @@ type Account {
     gender: Gender
     avatarURI: String
     lastLoginDate: String
-    roleDetails: RoleDetails
+    roleDetails: [RoleDetails]
 }
 
 input CreateAccountInput {

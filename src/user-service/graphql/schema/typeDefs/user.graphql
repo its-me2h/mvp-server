@@ -4,7 +4,7 @@ type User {
     status: Status
     phone: String
     email: String
-    accounts: [Account]
+    account: Account
 }
 
 input CreateUserInput {

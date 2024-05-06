@@ -1,5 +1,5 @@
 type Mutation {
-    createUser(object: CreateUserInput!): User!
-    updateUser(id: ID!, object: UpdateUserInput!): User!
+    createUser(input: CreateUserInput!): User!
+    updateUser(id: ID!, input: UpdateUserInput!): User!
 }
 

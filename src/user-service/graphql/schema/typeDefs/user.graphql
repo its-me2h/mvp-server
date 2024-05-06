@@ -1,35 +1,24 @@
 type User {
     id: ID
     role: Role
-    firstName: String
-    lastName: String
-    email: String @auth(requires: [{ role: SUPERADMIN, access: [SUPERADMIN, ADMIN, MANAGER, CLIENT] }, { role: ADMIN, access: [MANAGER, CLIENT] }, { role: MANAGER, access: [MANAGER, CLIENT] }])
+    status: Status
     phone: String
-    birthDate: String
-    gender: Gender
-    createdAt: String
-    updatedAt: String
+    email: String
     accounts: [Account]
 }
 
 input CreateUserInput {
+    id: ID!
     role: Role!
-    firstName: String!
-    lastName: String!
-    email: String!
+    status: Status!
     phone: String
-    birthDate: String!
-    gender: Gender!
+    email: String!
 }
 
 input UpdateUserInput {
-    firstName: String
-    lastName: String
-    email: String
+    status: Status
     phone: String
-    password: String
-    birthDate: String
-    gender: Gender
+    email: String
     createdAt: String
     updatedAt: String
 }
@@ -39,6 +28,13 @@ enum Role {
     ADMIN
     MANAGER
     CLIENT
+}
+
+enum Status {
+    PENDING
+    ACTIVE
+    INACTIVE
+    DELETED
 }
 
 enum Gender {

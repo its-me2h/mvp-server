@@ -1,24 +1,30 @@
-import { v4 as uuid } from 'uuid';
+import { GraphQLError } from 'graphql';
 import { Account } from '../../models';
 
 export const Mutation = {
     // Resolver function to create an account
-    createAccount: async (_: any, { object }: { object: any }) => {
+    createAccount: async (_: any, { input }: { input: any }) => {
         return await Account.create({
-            id: uuid(),
-            ...object
+            ...input
         });
     },
     // Resolver function to update an Account by ID
-    updateAccount: async (_: any, { id, object }: { id: string, object: any }) => {
+    updateAccount: async (_: any, { id, input }: { id: string, input: any }) => {
         const account = await Account.findByPk(id);
-        if (!account) throw new Error('account not found');
-        return await account.update(object);
+        if (!account) {
+            throw new GraphQLError('Account not found, Please verify your details and try again.', {
+                extensions: {
+                    code: 'ACCOUNT_NOT_FOUND',
+                    httpStatusCode: 404
+                }
+            });
+        }
+        return await account.update(input);
     },
 };
 
 export const User = {
     accounts: async (user: any) => {
-        return await Account.findAll({ where: { userId: user.id } });
+        return await Account.findAll({ where: { id: user.id } });
     },
 }

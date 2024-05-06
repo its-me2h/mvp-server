@@ -36,8 +36,3 @@ enum Status {
     INACTIVE
     DELETED
 }
-
-enum Gender {
-    MALE
-    FEMALE
-}
